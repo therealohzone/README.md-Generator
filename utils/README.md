@@ -1,7 +1,7 @@
-# Good README.md Generator
+# Good Read Me Generator
 
- 
- 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
+(https://opensource.org/licenses/MIT)
 
 ## Github URL
 [therealohzone] (https://github.com/therealohzone/)
@@ -10,7 +10,7 @@
 
 This project is creating a README.md Generator
 
-##Table of Contents
+## Table of Contents
 
 * [Installation](#dependencies)
 
@@ -39,7 +39,7 @@ John Oh
 
 ## License
 
-The License for this project is covered under  
+The License for this project is covered under [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Contributors
 
@@ -52,6 +52,6 @@ John Oh
 
 ## Questions
 
-For any comments or questions, you can contact me on Github through the link above or my email: undefined  
+For any comments or questions, you can contact me on Github through the link above or my email: johnoh@usc.edu  
 
 

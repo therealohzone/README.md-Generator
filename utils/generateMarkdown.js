@@ -78,7 +78,7 @@ ${renderLicenseLink(data.license)}
 
 ${data.description}
 
-##Table of Contents
+## Table of Contents
 
 * [Installation](#dependencies)
 
@@ -120,7 +120,7 @@ ${data.test}
 
 ## Questions
 
-For any comments or questions, you can contact me on Github through the link above or my email: ${data.email}  
+For any comments or questions, you can contact me on Github through the link above or my email: ${data.contact}  
 
 
 `;
