@@ -1,9 +1,11 @@
- const fs = require ('fs');
+//Include packages needed for this application
+const fs = require ('fs');
  const inquirer = require ('inquirer')
- const util = require ('util')
- const generateMarkdown = require(".utils/generateMarkdown");
+ const generateMarkdown = require("./utils/generateMarkdown");
+ const path = require('path')
 
- const promptUser = [
+ // Create an array of questions for user input
+ const questions = [
     {
         type: 'input',
         name: 'description',
@@ -11,25 +13,30 @@
       },
       {
         type: 'input',
-        name: 'name',
+        name: 'title',
         message: 'What is the title of your Project?',
       },
       {
         type: 'input',
         name: 'github',
-        message: 'Please write your Githubusername',
+        message: 'Please write your Github username',
       },
+      {
+        type: "input",
+        name: "contact",
+        message: "Please type your email"
+    },
       {
         type: 'list',
         name: 'license',
         message: 'Which license does your project use?',
-        choices: ["None", "MIT", "ISC", "Academic Free License v3.0", "Apace license 2.0", "Boost Software License 1.0"]
+        choices: ["None", "MIT", "ISC", "Apachye License 2.0", "Boost Software License 1.0"]
       },
       {
         type: 'input',
         name: 'dependencies',
         message: 'Does your Project require any dependencies to install?',
-        default: "npm i"
+        default: "(For node.js) npm i"
       },
       {
         type: 'input',
@@ -44,23 +51,23 @@
       {
         type: 'input',
         name: 'test',
-        message: 'Please write your Githubusername',
-        default: "npm test"
+        message: 'What commands are needed to run this Project?',
+        default: "(For node.js) npm test"
       },
  ];
 
+ // Create a function to write README file
  function writeToFile(fileName,data) {
-     return fs.writeFileSync(path.join(process.cwd(),fileName),data)
+     return fs.writeFileSync(path.join(process.cwd(), fileName), data)
  }
 
- function init () {
-     inquirer.prompt(promptUser).then((answers) => {
-         writeToFile('README.md', generateMarkdown(answers))
+ // Create a function to initialize app
+ function init() {
+     inquirer.prompt(questions).then((answers) => {
+         writeToFile('./utils/README.md', generateMarkdown({...answers}));
      })
  }
 
+ // Function call to initialize app
 init();
 
-      //THEN a high-quality, professional README.md is generated with the title of my project and 
-      //sections entitled Description, Table of Contents, Installation, Usage, License, Contributing, 
-      //Tests, and Questions
