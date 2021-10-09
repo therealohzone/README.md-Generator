@@ -69,7 +69,6 @@ function generateMarkdown(data) {
   return `# ${data.title}
 
 ${renderLicenseBadge(data.license)}
-${renderLicenseLink(data.license)}
 
 ## Github URL
 [${data.github}] (https://github.com/${data.github}/)
@@ -107,7 +106,7 @@ ${data.contributor}
 
 ## License
 
-The License for this project is covered under ${renderLicenseSection(data.license)}
+The License for this project is covered under ${renderLicenseSection(data.license)} ${renderLicenseLink(data.license)}
 
 ## Contributors
 
